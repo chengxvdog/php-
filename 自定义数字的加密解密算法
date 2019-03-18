@@ -1,0 +1,30 @@
+<?php
+	session_start();
+?>
+<body background="../image/1.jpg" style="font-size:12px; color:#000099; font-family:'微软雅黑'">
+<?php
+	echo "<form action='' method='post'>";//输出表单
+	echo "数字口令：<input name='text' type='text'>";
+	echo "<input type='submit' name='sub' value='确定'>";   
+	echo "</form>";
+	define("PI",3.1415926);//定义常量
+	function Encrypt($str){//自定义加密算法
+		return $str = $str + PI;//将口令与常量相加
+	}
+	function Decrypt($str){##自定义解锁密码
+		return $str = $str - PI;##将加密后口令与常量相减
+	}
+	if($_POST[sub]){##通过post方式传参
+		echo "加密口令&nbsp;&nbsp;".Encrypt($_POST[text])."<br>";//取得加密后的结果
+		$_SESSION[pwd] = Encrypt($_POST[text]);##保存在session中
+?>
+		<a href='index.php?pwd=1'>解密口令</a >//超链接
+<?php
+	}
+	if(isset($_GET[pwd])){##判断地址栏中是否存在pwd
+		echo "解密口令&nbsp;&nbsp;".Decrypt($_SESSION[pwd]);##口令解密
+	}
+?>
+</body>
+
+	
