@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body style="font-family:'华文彩云'; color:#0000CC; font-size:16px">
+系统的当前时间是：
+<?php 
+    date_default_timezone_set('Asia/ShangHai');##将格林时间设置为本地时间
+    $a=strtotime("now");                          ##取得当前时间戳
+    $b=strtotime("05 May 2010");    ##取得2010年5.5的时间戳
+    echo $a."\n";
+    echo"输出日期".date("Y-m-d H:i:s",$a)."<br><br>";##取得以$a为时间点的时间
+    echo $b."\n";
+    echo"输出日期".date("Y-m-d H:i:s",$b)."<br><br>";##取得以$b为时间点的时间
+    $c = ceil($a-$b)/(3600*24);                  ##计算相差天数
+    echo"距2010年5月5号已过去".$c."天";
+    ?>
+</body>
+</html>
+
