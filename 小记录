@@ -1,3 +1,5 @@
+
+一格式转化
 ##转化为json格式
 $obj=array('h'=>'Hello',w='world');
 echo json_encode($obj);
@@ -6,3 +8,35 @@ echo json_encode($obj);
 $jsonStr = '("h":"Hello","w":"world")';
 $obj = json_decode($jsonstr);
 echo $obj->h;
+
+
+
+二写入文件
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>  1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <?php
+    
+    $f =fopen('data','w');
+    if($f){
+fwrite($f,'hello php');
+fclose($f);
+
+
+    }
+    else{
+        echo'创建文件失败';
+    }
+    echo'ok';
+    ?>
+</body>
+</html>
