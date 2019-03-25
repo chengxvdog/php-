@@ -1,1 +1,8 @@
-echo json_encode();##转化为json格式
+##转化为json格式
+$obj=array('h'=>'Hello',w='world');
+echo json_encode($obj);
+
+##json转回来
+$jsonStr = '("h":"Hello","w":"world")';
+$obj = json_decode($jsonstr);
+echo $obj->h;
