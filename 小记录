@@ -40,3 +40,27 @@ fclose($f);
     ?>
 </body>
 </html>
+
+
+三插入图片，图片加水印<?php
+
+$img = imagecreatefromjpeg('mv.jpg');
+imagestring($img,5,5,5,'jikexueyuan.com',imagecolorallocate($img,255,0,0));##图片加水印
+
+header('Content-type:image/png');
+imagepng($img);
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
